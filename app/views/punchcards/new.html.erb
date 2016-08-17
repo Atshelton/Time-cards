@@ -1,0 +1,19 @@
+<h1>Add a new Work Period</h1>
+
+<%= form_for @punch, url: punchcards_path do |f| %>
+  <p>
+    <%= f.label :Start_day %>
+    <%= f.date_field :logged_time %>
+  </p>
+  <p>
+    <%= f.label :Current_Task %>
+    <%= f.text_field :task %>
+  </p>
+  <p>
+    <%= f.label :Notes %>
+    <%= f.text_area :notes %>
+  </p>
+  <p>
+    <%= f.submit "Start task" %>
+  </p>
+<% end %>

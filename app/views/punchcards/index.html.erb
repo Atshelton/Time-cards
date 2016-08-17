@@ -1,0 +1,29 @@
+<h1>This is your current logged hours and corresponding dates</h1><br>
+
+
+
+<p>
+  <% @punch.each do |punch| %>
+  <p>
+    <%= punch.logged_time  %>
+  </p>
+  <p>
+    <%= punch.task %>
+  </p>
+  <p>
+    <%= punch.notes %>
+  </p>
+  <%= link_to "Edit", edit_punchcard_path(punch.id) %> | <%= link_to "Delete", punchcard_path(punch.id), method: :delete %>
+  <% end %>
+</p>
+
+<br>
+
+
+<p>Lets get paid for those worked hours <%= link_to "Click Here!", new_punchcard_path %>,</p>
+<p>
+  You will be prompted to set up a new time log on the next page
+</p>
+<p>
+  <%= link_to "HomePage!", root_path %>
+</p>
